@@ -9,6 +9,6 @@ export default class CarController {
     const { model, year, color, status, buyValue, doorsQty, seatsQty } = req.body;
     const car = { model, year, color, status, buyValue, doorsQty, seatsQty };
     const created = await this._service.create(car);
-    res.status(200).json(created);
+    res.status(201).json(created);
   }
 }
