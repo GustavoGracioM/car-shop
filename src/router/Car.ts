@@ -12,5 +12,6 @@ const carContoller = new CarController(carService);
 router.post('/', (req, res) => carContoller.create(req, res));
 router.get('/:id', (req, res) => carContoller.readOne(req, res));
 router.get('/', (req, res) => carContoller.read(req, res));
+router.put('/:id', (req, res) => carContoller.update(req, res));
 
 export default router;
