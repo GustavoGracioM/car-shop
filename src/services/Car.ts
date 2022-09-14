@@ -33,4 +33,10 @@ export default class CarService implements IService<ICar> {
     if (!updated) throw Error(ErrorTypes.EntityNotFound);
     return updated;
   }
+
+  public async delete(id: string): Promise<ICar> {
+    const deleted = await this._car.delete(id);
+    if (!deleted) throw Error(ErrorTypes.EntityNotFound);
+    return deleted;
+  }
 }

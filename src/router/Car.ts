@@ -13,5 +13,6 @@ router.post('/', (req, res) => carContoller.create(req, res));
 router.get('/:id', (req, res) => carContoller.readOne(req, res));
 router.get('/', (req, res) => carContoller.read(req, res));
 router.put('/:id', (req, res) => carContoller.update(req, res));
+router.delete('/:id', (req, res) => carContoller.delete(req, res));
 
 export default router;
