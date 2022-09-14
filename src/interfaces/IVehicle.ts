@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-const vehicleZodSchema = z.object({
+export const VehicleZodSchema = z.object({
   model: z.string().min(3),
   year: z.number().gte(1900).lte(2022),
   color: z.string().min(3),
@@ -8,4 +8,4 @@ const vehicleZodSchema = z.object({
   buyValue: z.number().int(),
 });
 
-export type IVehicle = z.infer<typeof vehicleZodSchema>;
+export type IVehicle = z.infer<typeof VehicleZodSchema>;
