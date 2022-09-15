@@ -23,21 +23,60 @@ describe('Car Model', () => {
     expect(createdCar).to.be.deep.equal(carMockList);
   });
 
-  it('lista o carro pelo id', async () => {
-    sinon.stub(Model, 'findById').resolves(carMock);
-    const createdCar = await carModel.readOne('632250b817a8f3794c46aa5a');
-    expect(createdCar).to.be.deep.equal(carMock);
+  describe('Listar carro pelo id', () => {
+    it('lista com sucesso', async () => {
+      sinon.stub(Model, 'findById').resolves(carMock);
+      const createdCar = await carModel.readOne('632250b817a8f3794c46aa5a');
+      expect(createdCar).to.be.deep.equal(carMock);
+    });
+  
+    it('dispara um erro caso não for passado um id', async () => {
+      sinon.stub(mongoose, 'isValidObjectId').returns(false);
+      let erro: any;
+      try {
+        await carModel.readOne('');
+      } catch(err) {
+        erro = err;
+      }
+      expect(erro.message).to.be.equal('InvalidMongoId');
+    });
   });
 
-  it('atualiza um carro com sucesso', async () => {
-    sinon.stub(Model, 'findByIdAndUpdate').resolves(carMock);
-    const createdCar = await carModel.update('632250b817a8f3794c46aa5a', carMock);
-    expect(createdCar).to.be.deep.equal(carMock);
+  describe('Atualiza um carro pelo id', () => {
+    it('atualiza um carro com sucesso', async () => {
+      sinon.stub(Model, 'findByIdAndUpdate').resolves(carMock);
+      const createdCar = await carModel.update('632250b817a8f3794c46aa5a', carMock);
+      expect(createdCar).to.be.deep.equal(carMock);
+    });
+
+    it('dispara um erro caso não for passado um id', async () => {
+      sinon.stub(mongoose, 'isValidObjectId').returns(false);
+      let erro: any;
+      try {
+        await carModel.update('', carMock);
+      } catch(err) {
+        erro = err;
+      }
+      expect(erro.message).to.be.equal('InvalidMongoId');
+    });
   });
 
-  it('deleta um carro com sucesso', async () => {
-    sinon.stub(Model, 'findByIdAndDelete').resolves(carMock);
-    const createdCar = await carModel.delete('632250b817a8f3794c46aa5a');
-    expect(createdCar).to.be.deep.equal(carMock);
-  });
+  describe('Deleta um carro pelo id', () => {
+    it('deleta um carro com sucesso', async () => {
+      sinon.stub(Model, 'findByIdAndDelete').resolves(carMock);
+      const createdCar = await carModel.delete('632250b817a8f3794c46aa5a');
+      expect(createdCar).to.be.deep.equal(carMock);
+    });
+
+    it('dispara um erro caso não for passado um id', async () => {
+      sinon.stub(mongoose, 'isValidObjectId').returns(false);
+      let erro: any;
+      try {
+        await carModel.delete('');
+      } catch(err) {
+        erro = err;
+      }
+      expect(erro.message).to.be.equal('InvalidMongoId');
+    });
+  })
 })
