@@ -1,6 +1,6 @@
 # Shop Car
 
-Projeto Shop Car é um projeto do módulo de back-end do curso de desenvolvimenento web da <a href="https://www.betrybe.com/">Trybe</a>. Objetivo do projeto era desenvolver aplicação usando os princípios da Programação Orientada a Objetos (POO) para a construção de uma API com CRUD para gerenciar uma concessionária de veículos, utilizando o banco de dados MongoDB.
+Projeto Shop Car é um projeto do módulo de back-end do curso de desenvolvimenento web da <a href="https://www.betrybe.com/">Trybe</a>. Objetivo do projeto era desenvolver uma aplicação usando os princípios da Programação Orientada a Objetos (POO) para a construção de uma API com CRUD para gerenciar uma concessionária de veículos, utilizando o banco de dados MongoDB.
 
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) 
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
