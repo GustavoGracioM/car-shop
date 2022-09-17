@@ -16,6 +16,7 @@ Projeto Shop Car é um projeto do módulo de back-end do curso de desenvolvimene
 * Docker
 * MongoDB
 * Programação Orientada a Objetos (POO)
+* Testes Unitários
 
 ### Instrução de instalação
 
@@ -147,9 +148,8 @@ Projeto Shop Car é um projeto do módulo de back-end do curso de desenvolvimene
 
 # Teste
 
-- Digite no terminal o comando `npm run test:dev`
+- Digite no terminal o comando `npm run test`
 
-- Digite no terminal o comando `npm run test:coverage`
 
     
     
