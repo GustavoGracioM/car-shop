@@ -27,7 +27,7 @@ Projeto Shop Car é um projeto do módulo de back-end do curso de desenvolvimene
 * Inicialize container docker:
     * `docker-compose up -d`
 * Entre no container:
-    * `docker exec -it shop_car bash`
+    * `docker exec -it car_shop bash`
 * Instale as dependências
     * `npm install`
 * Inicialize a aplicação
